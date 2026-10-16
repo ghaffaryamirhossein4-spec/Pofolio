@@ -1,6 +1,6 @@
-import React, { useState } from 'react';
-import { PageId, Language } from '../types';
-import { ASSETS } from '../data/portfolioData';
+import React, { useState } from "react";
+import { PageId, Language } from "../types";
+import { ASSETS } from "../data/portfolioData";
 
 interface HeaderProps {
   currentPage: PageId;
@@ -15,22 +15,22 @@ export const Header: React.FC<HeaderProps> = ({
   onNavigate,
   language,
   onLanguageChange,
-  onOpenCvModal
+  onOpenCvModal,
 }) => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   const navItems: { id: PageId; labelEn: string; labelFa: string }[] = [
-    { id: 'about', labelEn: 'About', labelFa: 'درباره من' },
-    { id: 'skills', labelEn: 'Skills', labelFa: 'مهارت‌ها' },
-    { id: 'projects', labelEn: 'Projects', labelFa: 'پروژه‌ها' },
-    { id: 'experience', labelEn: 'Experience', labelFa: 'تجربیات' },
-    { id: 'contact', labelEn: 'Contact', labelFa: 'ارتباط' }
+    { id: "about", labelEn: "About", labelFa: "درباره من" },
+    { id: "skills", labelEn: "Skills", labelFa: "مهارت‌ها" },
+    { id: "projects", labelEn: "Projects", labelFa: "پروژه‌ها" },
+    { id: "experience", labelEn: "Experience", labelFa: "تجربیات" },
+    { id: "contact", labelEn: "Contact", labelFa: "ارتباط" },
   ];
 
   const handleNavClick = (page: PageId) => {
     onNavigate(page);
     setMobileMenuOpen(false);
-    window.scrollTo({ top: 0, behavior: 'smooth' });
+    window.scrollTo({ top: 0, behavior: "smooth" });
   };
 
   return (
@@ -39,18 +39,18 @@ export const Header: React.FC<HeaderProps> = ({
         {/* Brand & Monogram */}
         <div className="flex items-center gap-space-md shrink-0">
           <button
-            onClick={() => handleNavClick('about')}
+            onClick={() => handleNavClick("about")}
             className="flex items-center gap-space-sm group cursor-pointer text-left"
-            title="Kian Rafiei Portfolio"
+            title="Amirhosein Ghaffary Portfolio"
           >
             <img
               alt="Developer Monogram Logo"
-              className="h-8 w-auto object-contain transition-transform duration-300 group-hover:scale-105"
+              className="h-15 w-15 rounded-full object-cover transition-transform duration-300 group-hover:scale-105"
               src={ASSETS.logoMonogram}
             />
             <div className="hidden sm:flex flex-col">
               <span className="font-label-md text-label-md text-on-surface tracking-tight leading-tight">
-                Kian Rafiei
+                Amirhosein Ghaffary
               </span>
               <span className="font-code-sm text-code-sm text-primary leading-none">
                 fullstack.sys
@@ -62,7 +62,8 @@ export const Header: React.FC<HeaderProps> = ({
           <div className="hidden xl:inline-flex items-center gap-space-xs px-space-sm py-space-xs rounded-full bg-surface-container-high/60 border border-surface-container-highest/40">
             <span className="w-2 h-2 rounded-full bg-secondary shadow-[0_0_12px_2px_rgba(78,222,163,0.5)] animate-pulse"></span>
             <span className="font-code-sm text-code-sm text-on-surface-variant">
-              Available for hire <span className="text-outline">/</span> آماده همکاری
+              Available for hire <span className="text-outline">/</span> آماده
+              همکاری
             </span>
           </div>
         </div>
@@ -77,11 +78,11 @@ export const Header: React.FC<HeaderProps> = ({
                 onClick={() => handleNavClick(item.id)}
                 className={`px-space-md py-space-xs rounded-lg font-label-md text-label-md transition-all duration-200 cursor-pointer ${
                   isActive
-                    ? 'bg-surface-container-high text-primary shadow-[0_0_25px_-5px_rgba(6,182,212,0.35)] font-semibold'
-                    : 'text-on-surface-variant hover:text-on-surface hover:bg-surface-container-high/50'
+                    ? "bg-surface-container-high text-primary shadow-[0_0_25px_-5px_rgba(6,182,212,0.35)] font-semibold"
+                    : "text-on-surface-variant hover:text-on-surface hover:bg-surface-container-high/50"
                 }`}
               >
-                {language === 'fa' ? item.labelFa : item.labelEn}
+                {language === "fa" ? item.labelFa : item.labelEn}
               </button>
             );
           })}
@@ -92,11 +93,11 @@ export const Header: React.FC<HeaderProps> = ({
           {/* Dual Language Switcher */}
           <div className="flex items-center p-space-xs bg-surface-container-low rounded-full border border-surface-container-high/50">
             <button
-              onClick={() => onLanguageChange('en')}
+              onClick={() => onLanguageChange("en")}
               className={`px-space-sm py-space-xs rounded-full font-code-sm text-code-sm transition-all duration-200 flex items-center gap-space-xs cursor-pointer ${
-                language === 'en'
-                  ? 'text-primary bg-surface-container-high shadow-sm font-semibold'
-                  : 'text-on-surface-variant hover:text-on-surface'
+                language === "en"
+                  ? "text-primary bg-surface-container-high shadow-sm font-semibold"
+                  : "text-on-surface-variant hover:text-on-surface"
               }`}
               type="button"
               aria-label="Switch to English"
@@ -107,11 +108,11 @@ export const Header: React.FC<HeaderProps> = ({
               <span>EN</span>
             </button>
             <button
-              onClick={() => onLanguageChange('fa')}
+              onClick={() => onLanguageChange("fa")}
               className={`px-space-sm py-space-xs rounded-full font-code-sm text-code-sm transition-all duration-200 cursor-pointer ${
-                language === 'fa'
-                  ? 'text-secondary bg-surface-container-high shadow-sm font-semibold'
-                  : 'text-on-surface-variant hover:text-on-surface'
+                language === "fa"
+                  ? "text-secondary bg-surface-container-high shadow-sm font-semibold"
+                  : "text-on-surface-variant hover:text-on-surface"
               }`}
               type="button"
               aria-label="تغییر زبان به فارسی"
@@ -130,7 +131,9 @@ export const Header: React.FC<HeaderProps> = ({
               target="_blank"
               title="GitHub Profile"
             >
-              <span className="material-symbols-outlined text-[18px]">terminal</span>
+              <span className="material-symbols-outlined text-[18px]">
+                terminal
+              </span>
             </a>
             <a
               aria-label="Developer LinkedIn"
@@ -148,7 +151,9 @@ export const Header: React.FC<HeaderProps> = ({
               href="mailto:contact@domain.dev"
               title="Send Direct Email"
             >
-              <span className="material-symbols-outlined text-[18px]">alternate_email</span>
+              <span className="material-symbols-outlined text-[18px]">
+                alternate_email
+              </span>
             </a>
           </div>
 
@@ -176,7 +181,7 @@ export const Header: React.FC<HeaderProps> = ({
             aria-label="Toggle navigation menu"
           >
             <span className="material-symbols-outlined text-[22px]">
-              {mobileMenuOpen ? 'close' : 'menu'}
+              {mobileMenuOpen ? "close" : "menu"}
             </span>
           </button>
         </div>
@@ -192,11 +197,11 @@ export const Header: React.FC<HeaderProps> = ({
                 onClick={() => handleNavClick(item.id)}
                 className={`px-space-md py-space-sm rounded-lg text-left font-label-md text-label-md flex items-center justify-between transition-colors ${
                   currentPage === item.id
-                    ? 'bg-surface-container-high text-primary font-semibold'
-                    : 'text-on-surface-variant hover:text-on-surface hover:bg-surface-container'
+                    ? "bg-surface-container-high text-primary font-semibold"
+                    : "text-on-surface-variant hover:text-on-surface hover:bg-surface-container"
                 }`}
               >
-                <span>{language === 'fa' ? item.labelFa : item.labelEn}</span>
+                <span>{language === "fa" ? item.labelFa : item.labelEn}</span>
                 {currentPage === item.id && (
                   <span className="w-1.5 h-1.5 rounded-full bg-primary"></span>
                 )}
@@ -212,18 +217,39 @@ export const Header: React.FC<HeaderProps> = ({
               }}
               className="flex items-center gap-space-xs text-primary font-code-sm text-code-sm"
             >
-              <span className="material-symbols-outlined text-[16px]">description</span>
+              <span className="material-symbols-outlined text-[16px]">
+                description
+              </span>
               <span>Curriculum Vitae (PDF)</span>
             </button>
             <div className="flex items-center gap-space-xs text-on-surface-variant">
-              <a href="https://github.com" target="_blank" rel="noreferrer" className="p-2 hover:text-primary">
-                <span className="material-symbols-outlined text-[18px]">terminal</span>
+              <a
+                href="https://github.com"
+                target="_blank"
+                rel="noreferrer"
+                className="p-2 hover:text-primary"
+              >
+                <span className="material-symbols-outlined text-[18px]">
+                  terminal
+                </span>
               </a>
-              <a href="https://linkedin.com" target="_blank" rel="noreferrer" className="p-2 hover:text-primary">
-                <span className="material-symbols-outlined text-[18px]">hub</span>
+              <a
+                href="https://linkedin.com"
+                target="_blank"
+                rel="noreferrer"
+                className="p-2 hover:text-primary"
+              >
+                <span className="material-symbols-outlined text-[18px]">
+                  hub
+                </span>
               </a>
-              <a href="mailto:contact@domain.dev" className="p-2 hover:text-primary">
-                <span className="material-symbols-outlined text-[18px]">alternate_email</span>
+              <a
+                href="mailto:contact@domain.dev"
+                className="p-2 hover:text-primary"
+              >
+                <span className="material-symbols-outlined text-[18px]">
+                  alternate_email
+                </span>
               </a>
             </div>
           </div>

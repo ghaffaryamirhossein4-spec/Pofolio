@@ -28,7 +28,7 @@ export const Footer: React.FC<FooterProps> = ({ onNavigate, language }) => {
               src={ASSETS.logoMonogram}
             />
             <span className="font-label-md text-label-md text-on-surface tracking-wide">
-              Kian Rafiei
+              Amirhosein Ghaffary
             </span>
             <span className="font-code-sm text-code-sm text-outline">—</span>
             <span className="font-code-sm text-code-sm text-primary">v2.4.0</span>

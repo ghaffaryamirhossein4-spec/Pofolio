@@ -98,7 +98,7 @@ export const ResumeModal: React.FC<ResumeModalProps> = ({
               {/* Header section */}
               <div className="border-b border-surface-container-high pb-4 flex flex-col sm:flex-row justify-between items-start sm:items-center gap-2">
                 <div>
-                  <h1 className="text-2xl font-bold text-on-surface tracking-tight">Kian Rafiei</h1>
+                  <h1 className="text-2xl font-bold text-on-surface tracking-tight">Amirhosein Ghaffary</h1>
                   <p className="text-primary font-medium text-sm">
                     Full-Stack Software Engineer • Next.js | Node.js | Distributed Systems
                   </p>
